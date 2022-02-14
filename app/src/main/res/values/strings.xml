@@ -2,4 +2,10 @@
     <string name="app_name">CalendarioL</string>
     <string name="btn1">hola</string>
     <string name="holahola">HolaHola</string>
+    <string name="menu">Menu</string>
+    <string name="grupo">Group</string>
+    <string name="open_drawer">Open</string>
+    <string name="close_drawer">Close</string>
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
 </resources>
