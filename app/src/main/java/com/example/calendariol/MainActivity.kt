@@ -10,6 +10,7 @@ import android.widget.DatePicker
 import androidx.appcompat.app.ActionBar
 import androidx.appcompat.app.ActionBarDrawerToggle
 import androidx.core.view.GravityCompat
+import com.example.calendariol.databinding.ActivityMainBinding
 import java.util.*
 import kotlinx.android.synthetic.main.activity_main.*
 
@@ -19,20 +20,22 @@ import kotlinx.android.synthetic.main.activity_main.*
 class MainActivity : AppCompatActivity() {
 
     private lateinit var toogle:ActionBarDrawerToggle
+    private lateinit var binding:ActivityMainBinding
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        setContentView(R.layout.activity_main)
+        binding= ActivityMainBinding.inflate(layoutInflater)
+        setContentView(binding.root)
 
         toogle=ActionBarDrawerToggle(this,drawerLayout,R.string.open_drawer,R.string.close_drawer)
         drawerLayout.addDrawerListener(toogle)
         toogle.syncState()
 
         supportActionBar?.setDisplayHomeAsUpEnabled(true)
-        navigation.setNavigationItemSelectedListener {
+        binding.navigation.setNavigationItemSelectedListener {item->
             var lanzar = Intent(this, Activity2 :: class.java)
             var lanzar2 = Intent(this, Inicio :: class.java)
-            when(it.itemId){
+            when(item.itemId){
                 R.id.inbox_item->{
                     supportFragmentManager.beginTransaction().apply {
                         replace(R.id.fragmentcontainer,prueba())
@@ -59,6 +62,9 @@ class MainActivity : AppCompatActivity() {
             // Do something in response to button click
             var lanzar = Intent(this, Activity2 :: class.java)
             startActivity(lanzar)
+        }
+        binding.btnR.setOnClickListener(){
+
         }
 
         val bp: Button = findViewById(R.id.btnpreba)
