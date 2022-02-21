@@ -9,7 +9,7 @@ android {
 
     defaultConfig {
         applicationId "com.example.calendariol"
-        minSdk 23
+        minSdk 26  //cambiode 23 a 26 por el calendario
         targetSdk 32
         versionCode 1
         versionName "1.0"

@@ -66,6 +66,7 @@ class Activity2 : AppCompatActivity () {
 
     }
 
+
     fun showDialog(observer: TimePickerDialog.OnTimeSetListener) {
         TimePickerFragment.newInstance(observer)
             .show(supportFragmentManager, "time-picker")
