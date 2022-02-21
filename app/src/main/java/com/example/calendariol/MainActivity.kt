@@ -10,6 +10,7 @@ import android.widget.DatePicker
 import androidx.appcompat.app.ActionBar
 import androidx.appcompat.app.ActionBarDrawerToggle
 import androidx.core.view.GravityCompat
+import androidx.fragment.app.Fragment
 import com.example.calendariol.databinding.ActivityMainBinding
 import java.util.*
 import kotlinx.android.synthetic.main.activity_main.*
@@ -21,59 +22,30 @@ class MainActivity : AppCompatActivity() {
 
     private lateinit var toogle:ActionBarDrawerToggle
     private lateinit var binding:ActivityMainBinding
+    private var lsFragments= mutableListOf<Int>()//constante global como variable mutable
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         binding= ActivityMainBinding.inflate(layoutInflater)
         setContentView(binding.root)
 
-        toogle=ActionBarDrawerToggle(this,drawerLayout,R.string.open_drawer,R.string.close_drawer)
-        drawerLayout.addDrawerListener(toogle)
+        toogle=ActionBarDrawerToggle(this,binding.drawerLayout,R.string.open_drawer,R.string.close_drawer)
+        binding.drawerLayout.addDrawerListener(toogle)
         toogle.syncState()
 
         supportActionBar?.setDisplayHomeAsUpEnabled(true)
         binding.navigation.setNavigationItemSelectedListener {item->
-            var lanzar = Intent(this, Activity2 :: class.java)
-            var lanzar2 = Intent(this, Inicio :: class.java)
             when(item.itemId){
-                R.id.inbox_item->{
-                    supportFragmentManager.beginTransaction().apply {
-                        replace(R.id.fragmentcontainer,prueba())
-                        startActivity(lanzar)
-                        commit()
-                    }
+                R.id.inbox_item -> {
+                    createfragment(prueba())
+                    lsFragments.add(R.id.inbox_item)
+                    binding.drawerLayout.closeDrawer(GravityCompat.START)
+                    true
                 }
-                R.id.outbox_item->{
-                    supportFragmentManager.beginTransaction().apply {
-                        replace(R.id.fragmentcontainer,prueba())
-                        startActivity(lanzar2)
-                        commit()
-                    }
-                }
+                else->false
             }
-            drawerLayout.closeDrawer(GravityCompat.START)
-            true
-        }
-
-
-
-        val button: Button = findViewById(R.id.btnR)
-        button.setOnClickListener {
-            // Do something in response to button click
-            var lanzar = Intent(this, Activity2 :: class.java)
-            startActivity(lanzar)
-        }
-        binding.btnR.setOnClickListener(){
 
         }
-
-        val bp: Button = findViewById(R.id.btnpreba)
-        bp.setOnClickListener {
-            // Do something in response to button click
-            var lanzar = Intent(this, Inicio :: class.java)
-            startActivity(lanzar)
-        }
-
 
     }
 
@@ -82,6 +54,12 @@ class MainActivity : AppCompatActivity() {
             return true
         }
         return super.onOptionsItemSelected(item)
+    }
+    fun createfragment(fragment: Fragment){
+        supportFragmentManager.beginTransaction().apply {
+            replace(binding.fragmeLayout.id,fragment)
+            addToBackStack(null)
+        }.commit()
     }
 
 
