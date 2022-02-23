@@ -26,6 +26,8 @@ class MainActivity : AppCompatActivity() {
     private var lsFragments= mutableListOf<Int>()//constante global como variable mutable
 
     override fun onCreate(savedInstanceState: Bundle?) {
+        Thread.sleep(2000)//no es recomendable por el manejo de datos
+        setTheme(R.style.Theme_CalendarioL)
         super.onCreate(savedInstanceState)
         binding= ActivityMainBinding.inflate(layoutInflater)
         setContentView(binding.root)
@@ -45,7 +47,7 @@ class MainActivity : AppCompatActivity() {
                 }
                 R.id.outbox_item->{
                     Toast.makeText(this, "seleccion Inicio", Toast.LENGTH_LONG).show()
-                    var intent=Intent(this, Inicio::class.java)//para navegar entre aplicaciones
+                    val intent=Intent(this, Inicio::class.java)//para navegar entre aplicaciones
                     startActivity(intent)// inicializa el intent
                     lsFragments.add(R.id.outbox_item)
                     binding.drawerLayout.closeDrawer(GravityCompat.START)
@@ -53,7 +55,7 @@ class MainActivity : AppCompatActivity() {
                 }
                 R.id.favourites_item->{
                     Toast.makeText(this, "seleccion Date", Toast.LENGTH_LONG).show()
-                    var intent=Intent(this, Activity2::class.java)//para navegar entre aplicaciones
+                    val intent=Intent(this, Activity2::class.java)//para navegar entre aplicaciones
                     startActivity(intent)// inicializa el intent
                     lsFragments.add(R.id.favourites_item)
                     binding.drawerLayout.closeDrawer(GravityCompat.START)
