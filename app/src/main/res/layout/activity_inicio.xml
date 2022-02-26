@@ -30,8 +30,6 @@
         android:orientation="vertical">
 
 
-
-
         <com.google.android.material.textfield.TextInputLayout
             android:id="@+id/emailField"
             style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
@@ -40,6 +38,7 @@
             android:layout_marginTop="50dp"
             android:hint="Email"
             android:textColor="@color/white"
+            app:boxBackgroundColor="#76CCE1"
             app:errorEnabled="true"
             app:startIconDrawable="@drawable/ic_baseline_alternate_email_24">
 
@@ -48,12 +47,24 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:ems="10"
-                android:textColor="@color/white"
                 android:inputType="textEmailAddress"
                 android:minHeight="48dp"
+                android:textColor="@color/white"
                 tools:ignore="SpeakableTextPresentCheck" />
 
         </com.google.android.material.textfield.TextInputLayout>
+
+        <EditText
+            android:id="@+id/login_txt3"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="#76CCE1"
+            android:ems="30"
+            android:inputType="textPassword"
+            android:minHeight="48dp"
+            android:layout_marginTop="15dp"
+            android:textColor="@color/white"
+            tools:ignore="SpeakableTextPresentCheck" />
 
         <TextView
             android:id="@+id/textView2"
@@ -61,18 +72,8 @@
             android:layout_height="wrap_content"
             android:layout_marginTop="5dp"
             android:text="Pasword"
-            android:textColor="@color/white"
+            android:textColor="@color/black"
             android:textSize="16dp" />
-
-        <EditText
-            android:id="@+id/login_txt3"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:ems="10"
-            android:textColor="@color/white"
-            android:inputType="textPassword"
-            android:minHeight="48dp"
-            tools:ignore="SpeakableTextPresentCheck" />
 
 
         <Button
@@ -80,12 +81,12 @@
             style="@style/Widget.Material3.Button.ElevatedButton"
             android:layout_width="160dp"
             android:layout_height="wrap_content"
-            android:layout_marginTop="5dp"
+            android:layout_gravity="center_horizontal"
+            android:layout_marginTop="15dp"
             android:backgroundTint="#3E1860"
-            android:textColor="@color/white"
             android:text="Registrarme"
 
-            android:layout_gravity="center_horizontal"
+            android:textColor="@color/white"
             android:textSize="18sp"
 
             app:layout_constraintVertical_bias="0.655" />
@@ -95,14 +96,13 @@
             style="@style/Widget.Material3.Button.ElevatedButton"
             android:layout_width="wrap_content"
             android:layout_height="48dp"
+            android:layout_gravity="center_horizontal"
             android:layout_marginTop="5dp"
             android:layout_marginBottom="191dp"
             android:backgroundTint="#3E1860"
             android:text="Iniciar Sesión"
             android:textColor="@color/white"
-            android:textSize="18sp"
-            android:layout_gravity="center_horizontal"
-            />
+            android:textSize="18sp" />
 
 
     </LinearLayout>

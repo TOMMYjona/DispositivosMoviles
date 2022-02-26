@@ -2,6 +2,7 @@
     <string name="app_name">LEUS</string>
     <string name="btn1">hola</string>
     <string name="holahola">HolaHola</string>
+    <!-- TODO: Remove or change this placeholder text -->
     <string name="menu">Menu</string>
     <string name="grupo">Group</string>
     <string name="open_drawer">Open</string>

@@ -14,12 +14,15 @@ import androidx.core.view.GravityCompat
 import androidx.fragment.app.Fragment
 import com.example.calendariol.databinding.ActivityMainBinding
 import com.google.firebase.analytics.FirebaseAnalytics
+import com.google.firebase.auth.FirebaseAuth
 import java.util.*
 import kotlinx.android.synthetic.main.activity_main.*
 
 
 
-
+enum class ProviderType{
+    BASIC
+}
 class MainActivity : AppCompatActivity() {
 
     private lateinit var toogle:ActionBarDrawerToggle
@@ -27,8 +30,6 @@ class MainActivity : AppCompatActivity() {
     private var lsFragments= mutableListOf<Int>()//constante global como variable mutable
 
     override fun onCreate(savedInstanceState: Bundle?) {
-        Thread.sleep(2000)//no es recomendable por el manejo de datos
-        setTheme(R.style.Theme_CalendarioL)
         super.onCreate(savedInstanceState)
         binding= ActivityMainBinding.inflate(layoutInflater)
         setContentView(binding.root)
@@ -71,6 +72,21 @@ class MainActivity : AppCompatActivity() {
                 else->false
             }
 
+        }
+        //setup
+        val bundle2=intent.extras
+        val email=bundle2?.getString("email")
+        val provider=bundle2?.getString("provider")
+        setup(email?:"",provider?:"")
+
+    }
+    private fun setup(email:String,provider:String){
+        binding.emailtextview.text=email
+        binding.buttsigout.setOnClickListener(){
+            FirebaseAuth.getInstance().signOut()
+            val inicio=Intent(this ,Inicio::class.java)
+            //onBackPressed()//vuelve a la pantalla anterior
+            startActivity(inicio)
         }
 
     }
