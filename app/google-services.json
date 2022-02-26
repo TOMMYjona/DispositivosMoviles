@@ -1,0 +1,39 @@
+{
+  "project_info": {
+    "project_number": "707397879929",
+    "project_id": "leus-75a3e",
+    "storage_bucket": "leus-75a3e.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:707397879929:android:2d6c93e98bea9a42082ca8",
+        "android_client_info": {
+          "package_name": "com.example.calendariol"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "707397879929-1pha3kkrckckbddl57cet62sgidu1dur.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyCuEXy8kA11X5KEmhOmmktni2YLf4m1zTQ"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "707397879929-1pha3kkrckckbddl57cet62sgidu1dur.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

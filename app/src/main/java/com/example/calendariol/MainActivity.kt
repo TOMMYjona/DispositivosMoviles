@@ -13,6 +13,7 @@ import androidx.appcompat.app.ActionBarDrawerToggle
 import androidx.core.view.GravityCompat
 import androidx.fragment.app.Fragment
 import com.example.calendariol.databinding.ActivityMainBinding
+import com.google.firebase.analytics.FirebaseAnalytics
 import java.util.*
 import kotlinx.android.synthetic.main.activity_main.*
 
@@ -31,6 +32,12 @@ class MainActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         binding= ActivityMainBinding.inflate(layoutInflater)
         setContentView(binding.root)
+
+        //Analytics Event
+        val anlytics=FirebaseAnalytics.getInstance(this)
+        val bundle=Bundle()
+        bundle.putString("message","integracion de Firebase completa")
+        anlytics.logEvent("InitScreen",bundle)
 
         toogle=ActionBarDrawerToggle(this,binding.drawerLayout,R.string.open_drawer,R.string.close_drawer)
         binding.drawerLayout.addDrawerListener(toogle)

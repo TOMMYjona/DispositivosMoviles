@@ -3,6 +3,8 @@ plugins {
     id 'kotlin-android'
     id 'kotlin-android-extensions'
 }
+apply plugin: 'com.android.application'
+apply plugin: 'com.google.gms.google-services'
 
 android {
     compileSdk 32
@@ -57,5 +59,9 @@ dependencies {
     //dependencias diseño
     implementation 'com.google.android.material:material:1.5.0-rc01'
     implementation "androidx.fragment:fragment-ktx:1.4.1"
+
+    //google
+    implementation platform('com.google.firebase:firebase-bom:29.1.0')
+    implementation 'com.google.firebase:firebase-analytics-ktx'
 
 }
