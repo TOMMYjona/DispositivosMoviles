@@ -1,4 +1,4 @@
-package com.example.calendariol.data.Database.entidades
+package com.example.calendariol.Database.entidades
 
 import androidx.room.Entity
 import androidx.room.PrimaryKey

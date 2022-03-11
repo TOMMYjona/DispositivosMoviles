@@ -49,15 +49,14 @@ class MainActivity : AppCompatActivity() {
             when(item.itemId){
                 R.id.inbox_item -> {
                     Toast.makeText(this, "seleccion mascotas", Toast.LENGTH_LONG).show()
-                    createfragment(ListarFragmentPets())
+                    createfragment(R.id.inbox_item,ListarFragmentPets())
                     lsFragments.add(R.id.inbox_item)
                     binding.drawerLayout.closeDrawer(GravityCompat.START)
                     true
                 }
                 R.id.outbox_item ->{
-                    Toast.makeText(this, "seleccion Inicio", Toast.LENGTH_LONG).show()
-                    val intent=Intent(this, Inicio::class.java)//para navegar entre aplicaciones
-                    startActivity(intent)// inicializa el intent
+                    Toast.makeText(this, "seleccion News mascotas", Toast.LENGTH_LONG).show()
+                    createfragment(R.id.outbox_item,FavPets())
                     lsFragments.add(R.id.outbox_item)
                     binding.drawerLayout.closeDrawer(GravityCompat.START)
                     true
@@ -98,11 +97,37 @@ class MainActivity : AppCompatActivity() {
         }
         return super.onOptionsItemSelected(item)
     }
-    fun createfragment(fragment: Fragment){
-        supportFragmentManager.beginTransaction().apply {
-            replace(binding.fragmeLayout.id,fragment)
-            addToBackStack(null)
-        }.commit()
+    fun createfragment(tagToChange:Int,fragment: Fragment?=null){
+        var addStack:Boolean=false
+        val ft=supportFragmentManager.beginTransaction()
+        if (lsFragments.isNotEmpty()){
+            val currentFragment=
+                supportFragmentManager.findFragmentByTag(lsFragments.last().toString())!!
+            val toChangeFragment=supportFragmentManager.findFragmentByTag(tagToChange.toString())
+            if (toChangeFragment!=null){
+                if (currentFragment!=toChangeFragment){
+                    addStack=true
+                    ft.hide(currentFragment).show(toChangeFragment)
+                }
+            }else{
+                if (fragment!=null){
+                    addStack=true
+                    ft.hide(currentFragment).add(binding.fragmeLayout.id,fragment,tagToChange.toString())
+                }
+            }
+        }else{
+            if (fragment!=null){
+                ft.add(binding.fragmeLayout.id,fragment,tagToChange.toString())
+                addStack=true
+
+            }
+        }
+        if (addStack){
+            ft.commit()
+            ft.addToBackStack(tagToChange.toString())
+            lsFragments.add(tagToChange)
+        }
+
     }
 
 

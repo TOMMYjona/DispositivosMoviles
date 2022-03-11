@@ -1,9 +1,10 @@
 package com.example.calendariol.logica
 
 import com.example.calendariol.casoUsoPets.NewUseCasePets
-import com.example.calendariol.data.Database.entidades.NewsEntityLeus
+import com.example.calendariol.Database.entidades.NewsEntityLeus
 
 class NoticiasBLPets (){
+    //regresa todas las noticias
     suspend fun getNewList():List<NewsEntityLeus>{
 
         Thread.sleep(3000)
@@ -12,7 +13,7 @@ class NoticiasBLPets (){
     }
 
 
-    suspend fun getOneNews():NewsEntityLeus{
+    fun getOneNews():NewsEntityLeus{
         val r=(0..2).random()
         return NewUseCasePets().getAllNews()[r]//regresa una noticia aleatoria dependiendo del valor de n
 

@@ -1,7 +1,7 @@
 package com.example.calendariol.Database.Dao
 
 import androidx.room.*
-import com.example.calendariol.data.Database.entidades.NewsEntityLeus
+import com.example.calendariol.Database.entidades.NewsEntityLeus
 
 @Dao//etiqueta para manejar funciones en cuanto a bases de datos
 interface NewsDaoPets {

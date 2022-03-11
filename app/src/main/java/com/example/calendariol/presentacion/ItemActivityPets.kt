@@ -5,7 +5,7 @@ import android.os.Bundle
 import androidx.lifecycle.lifecycleScope
 import com.example.calendariol.R
 import com.example.calendariol.controladores.NoticiasControllerPets
-import com.example.calendariol.data.Database.entidades.NewsEntityLeus
+import com.example.calendariol.Database.entidades.NewsEntityLeus
 import com.example.calendariol.databinding.ActivityItemPetsBinding
 import com.example.calendariol.logica.NoticiasBLPets
 import com.squareup.picasso.Picasso

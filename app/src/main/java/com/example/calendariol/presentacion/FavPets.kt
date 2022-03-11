@@ -8,11 +8,9 @@ import android.view.View
 import android.view.ViewGroup
 import androidx.lifecycle.lifecycleScope
 import androidx.recyclerview.widget.LinearLayoutManager
-import com.example.calendariol.R
 import com.example.calendariol.controladores.adapters.NewsLeusAdapter
-import com.example.calendariol.data.Database.entidades.NewsEntityLeus
+import com.example.calendariol.Database.entidades.NewsEntityLeus
 import com.example.calendariol.databinding.FragmentFavPetsBinding
-import com.example.calendariol.databinding.FragmentListarNewsDogsBinding
 import com.example.calendariol.logica.NoticiasBLPets
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.launch

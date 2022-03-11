@@ -1,6 +1,6 @@
 package com.example.calendariol.controladores
 
-import com.example.calendariol.data.Database.entidades.NewsEntityLeus
+import com.example.calendariol.Database.entidades.NewsEntityLeus
 import com.example.calendariol.logica.NoticiasBLPets
 
 class NoticiasControllerPets {

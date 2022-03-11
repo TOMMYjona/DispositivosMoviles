@@ -5,13 +5,11 @@ import android.view.View
 import android.view.ViewGroup
 import androidx.recyclerview.widget.RecyclerView
 import com.example.calendariol.R
-import com.example.calendariol.data.Database.entidades.NewsEntityLeus
+import com.example.calendariol.Database.entidades.NewsEntityLeus
 import com.example.calendariol.databinding.ItemPetsBinding
-import com.example.calendariol.presentacion.ItemActivityPets
 import com.squareup.picasso.Picasso
 
-class NewsLeusAdapter(val newsItemList:List<NewsEntityLeus>,val onClickItemSelected:(NewsEntityLeus)->Unit):
-    RecyclerView.Adapter<NewsViewHolder>() {
+class NewsLeusAdapter(val newsItemList:List<NewsEntityLeus>,val onClickItemSelected:(NewsEntityLeus)->Unit):RecyclerView.Adapter<NewsViewHolder>() {
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): NewsViewHolder {
         var layoutInflater= LayoutInflater.from(parent.context)//variable que va inflar convertir los xml, las etiquetas en objetos
         val view=layoutInflater.inflate(R.layout.item_pets,parent,false)//necesitamos que vamos a inflar xml, contexto el cual a inflar, un booleano

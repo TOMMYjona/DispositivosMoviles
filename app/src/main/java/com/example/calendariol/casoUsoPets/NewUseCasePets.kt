@@ -1,6 +1,6 @@
 package com.example.calendariol.casoUsoPets
 
-import com.example.calendariol.data.Database.entidades.NewsEntityLeus
+import com.example.calendariol.Database.entidades.NewsEntityLeus
 import com.example.calendariol.utilsPets.Leus
 
 class NewUseCasePets {
