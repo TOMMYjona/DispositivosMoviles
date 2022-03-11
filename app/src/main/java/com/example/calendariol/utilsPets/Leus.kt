@@ -2,7 +2,7 @@ package com.example.calendariol.utilsPets
 
 import android.app.Application
 import androidx.room.Room
-import com.example.calendariol.Database.Dao.NewsDataBase
+import com.example.calendariol.Database.NewsDataBase
 
 class Leus:Application() {
     companion object {

@@ -48,7 +48,8 @@ class MainActivity : AppCompatActivity() {
         binding.navigation.setNavigationItemSelectedListener {item->
             when(item.itemId){
                 R.id.inbox_item -> {
-                    createfragment(prueba())
+                    Toast.makeText(this, "seleccion mascotas", Toast.LENGTH_LONG).show()
+                    createfragment(ListarFragmentPets())
                     lsFragments.add(R.id.inbox_item)
                     binding.drawerLayout.closeDrawer(GravityCompat.START)
                     true

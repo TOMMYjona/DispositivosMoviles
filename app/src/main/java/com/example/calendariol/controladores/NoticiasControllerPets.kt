@@ -1,4 +1,4 @@
-package com.example.calendariol.controladores.adapters
+package com.example.calendariol.controladores
 
 import com.example.calendariol.data.Database.entidades.NewsEntityLeus
 import com.example.calendariol.logica.NoticiasBLPets

@@ -3,8 +3,12 @@ package com.example.calendariol.presentacion
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import androidx.lifecycle.lifecycleScope
+import com.example.calendariol.R
+import com.example.calendariol.controladores.NoticiasControllerPets
 import com.example.calendariol.data.Database.entidades.NewsEntityLeus
 import com.example.calendariol.databinding.ActivityItemPetsBinding
+import com.example.calendariol.logica.NoticiasBLPets
+import com.squareup.picasso.Picasso
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.launch
 import kotlinx.coroutines.withContext
@@ -37,26 +41,25 @@ class ItemActivityPets : AppCompatActivity() {
         binding.textView8.text=news.autor
         Picasso.get().load(news.img).into(binding.imageView4);
         lifecycleScope.launch(Dispatchers.Main) {
-            fav = withContext(Dispatchers.IO) { NoticiasBL().checkIsSaved(news.id) }
+            fav = withContext(Dispatchers.IO) { NoticiasBLPets().checkIsSaved(news.id) }
             if (fav) {
                 binding.floatingAction.setImageResource(R.drawable.ic_favorite_24)
             }
         }
     }
-    private fun saveFavNews(news: NewsEntity?) {
+    private fun saveFavNews(news: NewsEntityLeus?) {
         if (news != null) {
             if (!fav) {
                 lifecycleScope.launch {
-                    NoticiasController().saveFavNews(news)
+                    NoticiasControllerPets().saveFavNews(news)
                     binding.floatingAction.setImageResource(R.drawable.ic_favorite_24)
                 }
             } else {
                 lifecycleScope.launch {
-                    NoticiasController().deleteFavNews(news)
+                    NoticiasControllerPets().deleteFavNews(news)
                     binding.floatingAction.setImageResource(R.drawable.ic_favorite_border_12)
                 }
             }
         }
-    }
     }
 }
