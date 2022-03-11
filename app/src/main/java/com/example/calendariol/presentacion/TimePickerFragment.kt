@@ -1,4 +1,4 @@
-package com.example.calendariol
+package com.example.calendariol.presentacion
 
 import android.app.Dialog
 import android.app.TimePickerDialog
@@ -6,9 +6,7 @@ import android.os.Build
 import android.os.Bundle
 import androidx.annotation.RequiresApi
 import androidx.fragment.app.DialogFragment
-import java.time.LocalTime
 import java.util.*
-import java.util.Calendar.MINUTE
 
 @RequiresApi(Build.VERSION_CODES.O)
 class TimePickerFragment : DialogFragment() {

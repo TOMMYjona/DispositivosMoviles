@@ -1,17 +1,14 @@
-package com.example.calendariol
+package com.example.calendariol.presentacion
 
 import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
-import android.view.Gravity
 import android.view.MenuItem
-import android.widget.Button
-import android.widget.DatePicker
 import android.widget.Toast
-import androidx.appcompat.app.ActionBar
 import androidx.appcompat.app.ActionBarDrawerToggle
 import androidx.core.view.GravityCompat
 import androidx.fragment.app.Fragment
+import com.example.calendariol.R
 import com.example.calendariol.databinding.ActivityMainBinding
 import com.google.firebase.analytics.FirebaseAnalytics
 import com.google.firebase.auth.FirebaseAuth
@@ -40,7 +37,10 @@ class MainActivity : AppCompatActivity() {
         bundle.putString("message","integracion de Firebase completa")
         anlytics.logEvent("InitScreen",bundle)
 
-        toogle=ActionBarDrawerToggle(this,binding.drawerLayout,R.string.open_drawer,R.string.close_drawer)
+        toogle=ActionBarDrawerToggle(this,binding.drawerLayout,
+            R.string.open_drawer,
+            R.string.close_drawer
+        )
         binding.drawerLayout.addDrawerListener(toogle)
         toogle.syncState()
 
@@ -53,7 +53,7 @@ class MainActivity : AppCompatActivity() {
                     binding.drawerLayout.closeDrawer(GravityCompat.START)
                     true
                 }
-                R.id.outbox_item->{
+                R.id.outbox_item ->{
                     Toast.makeText(this, "seleccion Inicio", Toast.LENGTH_LONG).show()
                     val intent=Intent(this, Inicio::class.java)//para navegar entre aplicaciones
                     startActivity(intent)// inicializa el intent
@@ -61,7 +61,7 @@ class MainActivity : AppCompatActivity() {
                     binding.drawerLayout.closeDrawer(GravityCompat.START)
                     true
                 }
-                R.id.favourites_item->{
+                R.id.favourites_item ->{
                     Toast.makeText(this, "seleccion Date", Toast.LENGTH_LONG).show()
                     val intent=Intent(this, Activity2::class.java)//para navegar entre aplicaciones
                     startActivity(intent)// inicializa el intent
@@ -84,7 +84,7 @@ class MainActivity : AppCompatActivity() {
         binding.emailtextview.text=email
         binding.buttsigout.setOnClickListener(){
             FirebaseAuth.getInstance().signOut()
-            val inicio=Intent(this ,Inicio::class.java)
+            val inicio=Intent(this , Inicio::class.java)
             //onBackPressed()//vuelve a la pantalla anterior
             startActivity(inicio)
         }

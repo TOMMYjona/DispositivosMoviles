@@ -1,4 +1,4 @@
-package com.example.calendariol
+package com.example.calendariol.presentacion
 
 import android.app.DatePickerDialog
 import android.app.TimePickerDialog
@@ -8,6 +8,7 @@ import android.os.Bundle
 import android.widget.EditText
 import android.widget.TextView
 import androidx.annotation.RequiresApi
+import com.example.calendariol.R
 import java.time.LocalTime
 import java.time.format.DateTimeFormatter
 import java.util.*
@@ -33,12 +34,13 @@ class Activity2 : AppCompatActivity () {
     }
 
     private fun showDatePickerDialog() {
-        val newFragment = DatePickerFragment.newInstance(DatePickerDialog.OnDateSetListener { _, year, month, day ->
-            // +1 because January is zero
-            val selectedDate = day.toString() + " / " + (month + 1) + " / " + year
-            val d1 = findViewById<EditText>(R.id.etDate)
-            d1.setText(selectedDate)
-        })
+        val newFragment =
+            DatePickerFragment.newInstance(DatePickerDialog.OnDateSetListener { _, year, month, day ->
+                // +1 because January is zero
+                val selectedDate = day.toString() + " / " + (month + 1) + " / " + year
+                val d1 = findViewById<EditText>(R.id.etDate)
+                d1.setText(selectedDate)
+            })
 
         newFragment.show(supportFragmentManager, "datePicker")
     }
@@ -54,14 +56,15 @@ class Activity2 : AppCompatActivity () {
 
     @RequiresApi(Build.VERSION_CODES.O)
     private fun showStartTimePicker() {
-        val newFragment = TimePickerFragment.newInstance(TimePickerDialog.OnTimeSetListener { _, hour, minute ->
-        /*showDialog{ _, hour, minute -> */
-            /*val currentTime = LocalTime.of(hour, minute)*/
-            val currentTime = hour.toString() + ": " + minute.toString()
+        val newFragment =
+            TimePickerFragment.newInstance(TimePickerDialog.OnTimeSetListener { _, hour, minute ->
+                /*showDialog{ _, hour, minute -> */
+                /*val currentTime = LocalTime.of(hour, minute)*/
+                val currentTime = hour.toString() + ": " + minute.toString()
 
-            val t1 = findViewById<EditText>(R.id.etTime)
-            t1.setText(currentTime)
-        })
+                val t1 = findViewById<EditText>(R.id.etTime)
+                t1.setText(currentTime)
+            })
         newFragment.show(supportFragmentManager,"timePicker")
 
     }
