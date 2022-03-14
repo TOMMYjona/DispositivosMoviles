@@ -1,5 +1,6 @@
 package com.example.calendariol.presentacion
 
+import android.content.Context
 import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
@@ -17,8 +18,9 @@ import kotlinx.android.synthetic.main.activity_main.*
 
 
 
-enum class ProviderType{
-    BASIC
+enum class ProviderType{ //designa como es el metodo de login sea correo o google
+    BASIC,
+    GOOGLE
 }
 class MainActivity : AppCompatActivity() {
 
@@ -79,14 +81,26 @@ class MainActivity : AppCompatActivity() {
         val provider=bundle2?.getString("provider")
         setup(email?:"",provider?:"")
 
+        //Guardar el estado actual del usuario identificado
+
+        val prefs=getSharedPreferences(getString(R.string.prefs_file),Context.MODE_PRIVATE).edit()//ficha de preferencias
+        prefs.putString("email",email)
+        prefs.putString("provider",provider)
+        prefs.apply()
     }
     private fun setup(email:String,provider:String){
         binding.emailtextview.text=email
+        binding.providertext.text=provider
         binding.buttsigout.setOnClickListener(){
+            //borra los datos de inicio de sesion
+            val prefs=getSharedPreferences(getString(R.string.prefs_file),Context.MODE_PRIVATE).edit()//ficha de preferencias
+            prefs.clear()
+            prefs.apply()
+
             FirebaseAuth.getInstance().signOut()
-            val inicio=Intent(this , Inicio::class.java)
-            //onBackPressed()//vuelve a la pantalla anterior
-            startActivity(inicio)
+            //val inicio=Intent(this , Inicio::class.java)
+            onBackPressed()//vuelve a la pantalla anterior
+            //startActivity(inicio)
         }
 
     }

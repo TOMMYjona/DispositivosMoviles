@@ -54,13 +54,14 @@
 
         <TextView
             android:id="@+id/emailtextview"
-            android:layout_width="246dp"
-            android:layout_height="28dp"
+            android:layout_width="247dp"
+            android:layout_height="31dp"
+            android:layout_centerHorizontal="true"
             android:background="#19AA9D"
             android:backgroundTint="#10A597"
+            android:paddingStart="16dp"
             android:text="TextView"
-            android:layout_centerHorizontal="true"
-            android:textColor="@color/white"
+            android:textColor="#263238"
             android:textSize="16dp"
             app:layout_constraintBottom_toTopOf="@+id/fragme_layout"
             app:layout_constraintEnd_toEndOf="parent"
@@ -68,6 +69,24 @@
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent"
             app:layout_constraintVertical_bias="0.104" />
+
+        <TextView
+            android:id="@+id/providertext"
+            android:layout_width="137dp"
+            android:layout_height="36dp"
+            android:layout_centerHorizontal="true"
+            android:background="#19AA9D"
+            android:backgroundTint="#10A597"
+            android:paddingStart="16dp"
+            android:text="TextView"
+            android:textColor="#263238"
+            android:textSize="16dp"
+            app:layout_constraintBottom_toTopOf="@+id/fragme_layout"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.939"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintVertical_bias="0.354" />
 
         <Button
             android:id="@+id/buttsigout"
