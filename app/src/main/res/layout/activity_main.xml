@@ -5,103 +5,26 @@
     android:id="@+id/drawerLayout"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    tools:openDrawer="end"
     tools:context=".presentacion.MainActivity">
 
-
-    <androidx.constraintlayout.widget.ConstraintLayout
+    <LinearLayout
         android:layout_width="match_parent"
-        android:layout_height="match_parent">
+        android:layout_height="match_parent"
+        android:orientation="vertical"
+        android:layout_marginTop="80dp">
 
-        <Button
-            android:id="@+id/btnpreba"
-            style="@style/Widget.Material3.Button.ElevatedButton"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="Prueba"
-            android:textSize="10sp"
-            app:layout_constraintBottom_toBottomOf="parent"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintHorizontal_bias="0.873"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toTopOf="parent"
-            app:layout_constraintVertical_bias="0.881" />
+        <androidx.fragment.app.FragmentContainerView
 
-        <Button
-            android:id="@+id/btnR"
-            style="@style/Widget.Material3.Button.ElevatedButton"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="Calendario"
-            android:textSize="10sp"
-            app:layout_constraintBottom_toBottomOf="parent"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintHorizontal_bias="0.113"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toTopOf="parent"
-            app:layout_constraintVertical_bias="0.881" />
+            android:layout_width="match_parent"
+            android:layout_height="650dp"
+            android:id="@+id/fragme_layout"/>
+    </LinearLayout>
 
-        <FrameLayout
-            android:id="@+id/fragme_layout"
-            android:layout_width="378dp"
-            android:layout_height="359dp"
-            app:layout_constraintBottom_toBottomOf="parent"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintHorizontal_bias="0.515"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toTopOf="parent">
-
-        </FrameLayout>
-
-        <TextView
-            android:id="@+id/emailtextview"
-            android:layout_width="247dp"
-            android:layout_height="31dp"
-            android:layout_centerHorizontal="true"
-            android:background="#19AA9D"
-            android:backgroundTint="#10A597"
-            android:paddingStart="16dp"
-            android:text="TextView"
-            android:textColor="#263238"
-            android:textSize="16dp"
-            app:layout_constraintBottom_toTopOf="@+id/fragme_layout"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintHorizontal_bias="0.935"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toTopOf="parent"
-            app:layout_constraintVertical_bias="0.104" />
-
-        <TextView
-            android:id="@+id/providertext"
-            android:layout_width="137dp"
-            android:layout_height="36dp"
-            android:layout_centerHorizontal="true"
-            android:background="#19AA9D"
-            android:backgroundTint="#10A597"
-            android:paddingStart="16dp"
-            android:text="TextView"
-            android:textColor="#263238"
-            android:textSize="16dp"
-            app:layout_constraintBottom_toTopOf="@+id/fragme_layout"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintHorizontal_bias="0.939"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toTopOf="parent"
-            app:layout_constraintVertical_bias="0.354" />
-
-        <Button
-            android:id="@+id/buttsigout"
-            style="@style/Widget.Material3.Button.ElevatedButton"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginEnd="20dp"
-            android:backgroundTint="#9E901A"
-            android:text="Signout"
-            android:textColor="@color/white"
-            android:textSize="18dp"
-            app:layout_constraintBottom_toTopOf="@+id/fragme_layout"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/emailtextview" />
-    </androidx.constraintlayout.widget.ConstraintLayout>
+    <include
+        layout="@layout/app_bar_main"
+        android:layout_width="wrap_content"
+        android:layout_height="match_parent" />
 
     <com.google.android.material.navigation.NavigationView
         android:id="@+id/navigation"
@@ -112,5 +35,6 @@
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
+        app:headerLayout="@layout/nav_header_main"
         app:menu="@menu/navigation_drawer" />
 </androidx.drawerlayout.widget.DrawerLayout>

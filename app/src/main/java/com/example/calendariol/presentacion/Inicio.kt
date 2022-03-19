@@ -24,7 +24,7 @@ class Inicio : AppCompatActivity() {
     private lateinit var binding: ActivityInicioBinding
     //constante para google
     private val GOOGLE_SIGN_IN=100
-
+    //----------------------------------------------------------------------------------------
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         binding= ActivityInicioBinding.inflate(layoutInflater)
@@ -42,11 +42,12 @@ class Inicio : AppCompatActivity() {
         session()
 
     }
-
+    //----------------------------------------------------------------------------------------
     override fun onStart() {
         super.onStart()
         auntlayout.visibility=View.VISIBLE
     }
+    //----------------------------------------------------------------------------------------
     private fun session(){
         val prefs=getSharedPreferences(getString(R.string.prefs_file), Context.MODE_PRIVATE)//ficha de preferencias
         val email=prefs.getString("email",null)
@@ -56,6 +57,7 @@ class Inicio : AppCompatActivity() {
             showhome(email,ProviderType.valueOf(provider))
         }
     }
+    //----------------------------------------------------------------------------------------
     private fun setup(){
         title="Autentification"
         binding.etregistro.setOnClickListener(){
@@ -100,6 +102,7 @@ class Inicio : AppCompatActivity() {
             getResult.launch(googleclient.signInIntent)
         }
     }
+    //----------------------------------------------------------------------------------------
     private val getResult = registerForActivityResult(ActivityResultContracts.StartActivityForResult()) { result->
             if(result.resultCode == Activity.RESULT_OK){
                 val task=GoogleSignIn.getSignedInAccountFromIntent(result.data)
@@ -122,7 +125,7 @@ class Inicio : AppCompatActivity() {
                 }
             }
         }
-
+    //----------------------------------------------------------------------------------------
     private fun showalert(){
         val builder=AlertDialog.Builder(this)
         builder.setTitle("Error")
@@ -131,7 +134,7 @@ class Inicio : AppCompatActivity() {
         val dialog:AlertDialog=builder.create()
         dialog.show()
     }
-
+    //----------------------------------------------------------------------------------------
     private fun showhome(email:String,provider: ProviderType){
         val Mainintent=Intent(this, MainActivity::class.java).apply {
             putExtra("email",email)

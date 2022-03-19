@@ -1,24 +1,37 @@
 <?xml version="1.0" encoding="utf-8"?>
 <menu xmlns:android="http://schemas.android.com/apk/res/android">
-    <item
-        android:id="@+id/main_item"
-        android:title="@string/menu">
+    <group>
+
+            <item
+                android:id="@+id/Noticias"
+                android:icon="@drawable/ic_baseline_home_24"
+                android:title="@string/Noticias"
+                android:checkable="true"/>
+            <item
+                android:id="@+id/Favoritos"
+                android:icon="@drawable/ic_baseline_group_24"
+                android:title="@string/Favoritos"
+                android:checkable="true"/>
+
+    </group>
+    <item android:title="Usuario Pets">
         <menu>
             <item
-                android:id="@+id/inbox_item"
-                android:icon="@drawable/ic_baseline_home_24"
-                android:title="@string/menu"
-                android:checkable="true"/>
-            <item
-                android:id="@+id/outbox_item"
+                android:id="@+id/Creación_Usuarios"
                 android:icon="@drawable/ic_baseline_group_24"
-                android:title="@string/grupo"
+                android:title="@string/Creación_Usuarios"
                 android:checkable="true"/>
             <item
-                android:id="@+id/favourites_item"
+                android:id="@+id/Pets"
                 android:icon="@drawable/ic_baseline_home_24"
-                android:title="@string/menu"
+                android:title="@string/Pets"
                 android:checkable="true"/>
+            <item
+                android:id="@+id/Sigout"
+                android:icon="@drawable/ic_baseline_home_24"
+                android:title="@string/Sign_out"
+                android:checkable="true"/>
+
         </menu>
     </item>
 </menu>

@@ -4,12 +4,30 @@
     <string name="imagenboton">botonimg</string>
     <string name="holahola">HolaHola</string>
     <!-- TODO: Remove or change this placeholder text -->
-    <string name="menu">Menu</string>
-    <string name="grupo">Group</string>
+    <string name="Noticias">Menu</string>
+    <string name="Favoritos">Group</string>
+    <string name="Creación_Usuarios">Creación Usuarios</string>
+    <string name="Pets">Pets</string>
+    //---------------------------------------------------
+    <string name="FloatingRegreso">flRegreso</string>
+    //------------------------------------------------
     <string name="open_drawer">Open</string>
     <string name="close_drawer">Close</string>
     <string name="prefs_file">com.example.calendariol.preferencefilekey</string>
     <string name="hello_blank_fragment">Hello blank fragment</string>
+    <string name="title_activity_leus">LEUS</string>
+    <string name="navigation_drawer_open">Open navigation drawer</string>
+    <string name="navigation_drawer_close">Close navigation drawer</string>
+    <string name="nav_header_title">Android Studio</string>
+    <string name="nav_header_subtitle">android.studio@android.com</string>
+    <string name="nav_header_desc">Navigation header</string>
+    <string name="action_settings">Settings</string>
+
+    <string name="menu_home">Home</string>
+    <string name="menu_gallery">Gallery</string>
+    <string name="menu_slideshow">Slideshow</string>
+    <string name="content_description_media">media</string>
+    <string name="Sign_out">Sing out</string>
 
 
 </resources>

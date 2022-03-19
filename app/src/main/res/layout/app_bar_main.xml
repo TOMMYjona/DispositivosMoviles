@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.coordinatorlayout.widget.CoordinatorLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".presentacion.MainActivity">
+
+    <com.google.android.material.appbar.AppBarLayout
+        android:layout_width="match_parent"
+        android:layout_height="88dp"
+        android:background="#3B73A3"
+        android:fitsSystemWindows="true"
+        android:visibility="visible">
+
+        <com.google.android.material.appbar.CollapsingToolbarLayout
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:fitsSystemWindows="true"
+            app:layout_scrollFlags="scroll|exitUntilCollapsed|snap"
+            app:contentScrim="?attr/colorPrimary"
+            app:statusBarScrim="?attr/colorPrimaryVariant"
+           >
+
+            <ImageView
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:contentDescription="@string/content_description_media"
+                android:fitsSystemWindows="true"
+                android:scaleType="matrix"
+                android:src="@mipmap/fox" />
+
+            <com.google.android.material.appbar.MaterialToolbar
+
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:background="@android:color/transparent"
+                app:layout_collapseMode="pin"/>
+
+            <androidx.appcompat.widget.Toolbar
+                android:id="@+id/toolbarmain"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                app:layout_scrollFlags="scroll|enterAlways" />
+
+        </com.google.android.material.appbar.CollapsingToolbarLayout>
+
+    </com.google.android.material.appbar.AppBarLayout>
+
+
+</androidx.coordinatorlayout.widget.CoordinatorLayout>
