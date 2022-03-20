@@ -4,9 +4,10 @@
     <string name="imagenboton">botonimg</string>
     <string name="holahola">HolaHola</string>
     <!-- TODO: Remove or change this placeholder text -->
-    <string name="Noticias">Menu</string>
-    <string name="Favoritos">Group</string>
+    <string name="Noticias">Noticias</string>
+    <string name="Favoritos">Favoritos</string>
     <string name="Creación_Usuarios">Creación Usuarios</string>
+    <string name="Recordatorio">Recordatorio</string>
     <string name="Pets">Pets</string>
     //---------------------------------------------------
     <string name="FloatingRegreso">flRegreso</string>
@@ -29,6 +30,12 @@
     <string name="content_description_media">media</string>
     <string name="Sign_out">Sing out</string>
     <string name="button_bar">button_bar</string>
+    <string name="google_url">google url</string>
+    <string name="guardar">guardar</string>
+    <string name="seleccionar_hora">seleccion_hora</string>
+    <string name="seleccionar_fecha">seleccionar_fecha</string>
+    <string name="recordatorio">recordatorio</string>
+    <string name="ingresar_evento">ingresar_evento</string>
 
 
 </resources>

@@ -14,7 +14,8 @@ data class NewsEntityLeus(
     val autor:String?,
     val title:String?,
     val desc:String?,
-    val img:String?){
+    val img:String?,
+    var url:String?){
 
 }
 

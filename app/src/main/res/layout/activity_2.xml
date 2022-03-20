@@ -5,15 +5,23 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:orientation="vertical"
-    tools:context=".presentacion.MainActivity">
+    >
+
+    <Space
+        android:layout_width="match_parent"
+        android:layout_height="5dp" />
+
     <TextView
+
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_gravity="center_horizontal"
         android:layout_margin="24dp"
-        android:text="Recordatorio"
+        android:text="@string/recordatorio"
         android:textSize="24sp"
         android:textStyle="bold" />
+
+
 
     <EditText
         android:id="@+id/etDate"
@@ -22,8 +30,11 @@
         android:layout_margin="24dp"
         android:clickable="false"
         android:focusable="false"
-        android:hint="Ingresar Fecha"
-        android:minHeight="48dp" />
+        android:hint="@string/seleccionar_fecha"
+        android:minHeight="48dp"
+        android:textColorHint="#757575"
+        android:autofillHints=""
+        android:inputType="text" />
 
     <EditText
         android:id="@+id/etTime"
@@ -32,6 +43,48 @@
         android:layout_margin="24dp"
         android:clickable="false"
         android:focusable="false"
-        android:hint="Ingresar Hora"
-        android:minHeight="48dp" />
+        android:hint="@string/seleccionar_hora"
+        android:minHeight="48dp"
+        android:textColorHint="#757575"
+        android:autofillHints=""
+        android:inputType="text" />
+
+    <EditText
+        android:id="@+id/etEvent"
+        android:layout_width="match_parent"
+        android:layout_height="60dp"
+        android:layout_margin="24dp"
+        android:autofillHints=""
+        android:clickable="false"
+        android:focusable="false"
+        android:hint="@string/ingresar_evento"
+        android:inputType="text"
+        android:minHeight="48dp"
+        android:textColorHint="#757575" />
+
+    <Button
+        android:id="@+id/btnRecordatorio"
+        style="@style/Widget.Material3.Button.ElevatedButton"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="@string/guardar"
+        android:textSize="16sp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.3"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.3" />
+
+    <ListView
+        android:id="@+id/etList"
+        android:layout_width="match_parent"
+        android:layout_height="129dp"
+        android:layout_margin="24dp"
+        android:autofillHints=""
+        android:clickable="false"
+        android:focusable="false"
+        android:minHeight="48dp"
+        android:textColorHint="#757575" />
+
 </LinearLayout>

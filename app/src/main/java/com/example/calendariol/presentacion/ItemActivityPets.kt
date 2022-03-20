@@ -1,5 +1,7 @@
 package com.example.calendariol.presentacion
 
+import android.content.Intent
+import android.net.Uri
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import androidx.lifecycle.lifecycleScope
@@ -18,28 +20,37 @@ import kotlinx.serialization.json.Json
 class ItemActivityPets : AppCompatActivity() {
     private lateinit var binding: ActivityItemPetsBinding
     private var fav: Boolean = false
+    var newsObtain: NewsEntityLeus? = null
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         binding= ActivityItemPetsBinding.inflate(layoutInflater)
         setContentView(binding.root)
 
-        var n:NewsEntityLeus?=null
+
         intent.extras?.let{
-            n= Json.decodeFromString<NewsEntityLeus>(it.getString("noticia").toString())
+            newsObtain= Json.decodeFromString<NewsEntityLeus>(it.getString("noticia").toString())
 
         }
-        if(n!=null){
-            loadNews(n!!)
+        if(newsObtain!=null){
+            loadNews(newsObtain!!)
         }
         binding.floatingAction.setOnClickListener() {
-            saveFavNews(n)
+            saveFavNews(newsObtain)
+        }
+        binding.googlepag.setOnClickListener(){
+            googleurl(newsObtain!!)
         }
     }
+    fun googleurl(news: NewsEntityLeus){
+        val pag=Intent(Intent.ACTION_VIEW, Uri.parse(news.url))
+        startActivity(pag)
+    }
     fun loadNews(news:NewsEntityLeus){
-        binding.textView7.text=news.title
-        binding.textView5.text=news.desc
-        binding.textView8.text=news.autor
-        Picasso.get().load(news.img).into(binding.imageView4);
+        binding.title.text=news.title
+        binding.descp.text=news.desc
+        binding.autor.text=news.autor
+        Picasso.get().load(news.img).into(binding.contenimageFav);
+
         lifecycleScope.launch(Dispatchers.Main) {
             fav = withContext(Dispatchers.IO) { NoticiasBLPets().checkIsSaved(news.id) }
             if (fav) {

@@ -5,21 +5,24 @@ import com.example.calendariol.utilsPets.Leus
 
 class NewUseCasePets {
     private val newlist= listOf<NewsEntityLeus>(
-        NewsEntityLeus(  1,"Sarah Perez",
-            "This Week in Apps: Microsoft's app store principles, TikTok's new safety policies, Apple reveals 'Tap to Pay'",
-            "Welcome back to This Week in Apps, the weekly TechCrunch series that recaps the latest in mobile OS news, mobile applications and the overall app economy. The app industry continues to grow, with a record number of downloads and consumer spending across both …",
-            "https://techcrunch.com/wp-content/uploads/2021/11/this-week-in-apps-splash-2021.png?w=753"),
+        NewsEntityLeus(  1,"All Pets",
+            "EMERGENCIAS / ATENCIÓN 24 HORAS",
+            "El servicio de emergencia conlleva la estabilización del paciente y regularmente incluye la colocación de catéteres intravenosos, administración de fluidos vitales, medicación específica para el manejo del dolor, oxigeno terapia y en ciertos casos una transfusión sanguínea o de plasma.",
+            "https://scontent.fuio2-1.fna.fbcdn.net/v/t31.18172-8/10856694_1578673822401008_1876686428446506567_o.jpg?stp=dst-jpg_s960x960&_nc_cat=103&ccb=1-5&_nc_sid=e3f864&_nc_ohc=eRzUqQPyf4EAX_ijkJU&_nc_ht=scontent.fuio2-1.fna&oh=00_AT8iUCjaS-TQOKHPoF1GU68zxSsXmfbNOehjbYIgN5d7Cw&oe=625CC749",
+            "http://www.allpets-ec.com/"),
 
-        NewsEntityLeus(2,"Alex Wilhelm",
-            "Soon all blockchain companies will be crypto speculators",
-            "Welcome to The TechCrunch Exchange, a weekly startups-and-markets newsletter. It’s inspired by the daily TechCrunch+ column where it gets its name. Want it in your inbox every Saturday? Sign up here.  It’s a little hard to sit down and write up some jaunty no…",
-            "https://techcrunch.com/wp-content/uploads/2020/06/NSussman_Techcrunch_Exchange-multicolor.jpg?w=533",),
 
-        NewsEntityLeus(3,"Krystal1222222222",
-            "'Take a chill pill, stay long' — Anthony Scaramucci says bitcoin's recent plunge won't last",
-            "The SkyBridge Capital founder told CNBC on Tuesday he advises his own clients to invest in cryptocurrency, but without getting overexcited.",
-            "https://depor.com/resizer/4LiA3UcZpkTbq0pGF8j9dPiahkw=/580x330/smart/filters:format(jpeg):quality(75)/cloudfront-us-east-1.images.arcpublishing.com/elcomercio/6Y2EDIISGFGVFANEVDCR5LCG34.jpg"
-        )
+        NewsEntityLeus(2,"GDC Profesionales",
+            "Clínica Veterinaria Pet Line",
+            "Somos una empresa importadora y distribuidora de insumos veterinarios. Trabajamos con compañías internacionales localizadas en Brasil, EEUU y próximamente en Perú, Buscamos ampliar nuestro negocio implementando servicios para mascotas y sus dueños.",
+            "https://container.aiyellow.com/pictures/3000000_3100000/3000000_3010000/3000000_3001000/3000300_3000400/3000336/banners/77ba5e225387fc5c5114cd9aab9ae54f.jpg",
+                "https://profesionales.gdc.coop/ads/animalhelpveterinaria/"),
+
+        NewsEntityLeus(3,"PetLine",
+            "'Vet Solutions",
+            "La línea Vet line busca contribuir con el desarrollo de los negocios veterinarios, importando, distribuyendo y exportando productos innovadores confiables y de alta calidad.",
+            "https://vetsolutionsec.com/wp-content/uploads/2018/09/vet2.jpg"
+            ,"https://vetsolutionsec.com/")
     )
     fun getAllNews():List<NewsEntityLeus>{
         return newlist

@@ -126,6 +126,12 @@ class MainActivity : AppCompatActivity(), NavigationView.OnNavigationItemSelecte
                     lsFragments.add(R.id.Creación_Usuarios)
 
                 }
+                R.id.Recordatorio->{
+                    Toast.makeText(this, "Seleccion Usuarios", Toast.LENGTH_LONG).show()
+                    createfragment(R.id.Recordatorio,Activity2())
+                    lsFragments.add(R.id.Recordatorio)
+
+                }
                 R.id.Sigout->{
                     //borra los datos de inicio de sesion
                     val prefs=getSharedPreferences(getString(R.string.prefs_file),Context.MODE_PRIVATE).edit()//ficha de preferencias

@@ -27,6 +27,11 @@
                 android:title="@string/Pets"
                 android:checkable="true"/>
             <item
+                android:id="@+id/Recordatorio"
+                android:icon="@drawable/ic_baseline_home_24"
+                android:title="@string/Recordatorio"
+                android:checkable="true"/>
+            <item
                 android:id="@+id/Sigout"
                 android:icon="@drawable/ic_baseline_home_24"
                 android:title="@string/Sign_out"
