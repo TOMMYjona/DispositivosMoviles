@@ -5,13 +5,18 @@ import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import androidx.lifecycle.lifecycleScope
 import androidx.recyclerview.widget.LinearLayoutManager
 import com.example.calendariol.Database.entidades.Users
 import com.example.calendariol.R
 import com.example.calendariol.controladores.adapters.NewsAdapterRegister
 import com.example.calendariol.databinding.FragmentListarNewsDogsBinding
 import com.example.calendariol.databinding.FragmentRegisterlistPetsBinding
+import com.example.calendariol.logica.NoticiasBLPets
 import com.google.firebase.database.*
+import kotlinx.coroutines.Dispatchers
+import kotlinx.coroutines.launch
+import kotlinx.coroutines.withContext
 
 class RegisterlistPets : Fragment() {
     private lateinit var binding: FragmentRegisterlistPetsBinding
@@ -29,10 +34,14 @@ class RegisterlistPets : Fragment() {
     //-----------------------------------------------------------------------------
     override fun onStart() {
         super.onStart()
-        binding.listrecyclerViewpets.layoutManager=LinearLayoutManager(binding.listrecyclerViewpets.context)
-        binding.listrecyclerViewpets.setHasFixedSize(true)
-        userrecycler= arrayListOf<Users>()
-        getuserdata()
+        binding.progressBarPets.visibility = View.VISIBLE
+        lifecycleScope.launch(Dispatchers.Main) {
+            binding.listrecyclerViewpets.layoutManager=LinearLayoutManager(binding.listrecyclerViewpets.context)
+            binding.listrecyclerViewpets.setHasFixedSize(true)
+            userrecycler= arrayListOf<Users>()
+            getuserdata()
+
+            }
 
     }
     //-----------------------------------------------------------------------------
@@ -47,7 +56,9 @@ class RegisterlistPets : Fragment() {
                         userrecycler.add(users!!)
                     }
                     binding.listrecyclerViewpets.adapter=NewsAdapterRegister(userrecycler)
+
                 }
+                binding.progressBarPets.visibility=View.INVISIBLE
             }
 
             override fun onCancelled(error: DatabaseError) {

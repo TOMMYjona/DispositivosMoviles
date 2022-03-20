@@ -1,63 +1,38 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:background="@drawable/pantallainicio"
     tools:context=".presentacion.Inicio">
-
-    <ImageView
-        android:id="@+id/etfondo"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginBottom="-45dp"
-        android:scaleX="1.4"
-        android:scaleY="1"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.0"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.0"
-        app:srcCompat="@drawable/pantallainicio" />
-
-    <ImageButton
-        android:id="@+id/GoogleButton"
-        style="@style/Widget.Material3.Button.ElevatedButton"
-        android:layout_width="wrap_content"
-        android:layout_height="70dp"
-        android:layout_gravity="center_horizontal"
-        android:contentDescription="@string/imagenboton"
-        app:layout_constraintBottom_toBottomOf="@+id/etfondo"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.233"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/auntlayout"
-        app:layout_constraintVertical_bias="0.076"
-        app:srcCompat="@mipmap/google" />
 
     <LinearLayout
         android:id="@+id/auntlayout"
-        android:layout_width="348dp"
-        android:layout_height="330dp"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center_vertical"
+        android:layout_marginLeft="40dp"
+        android:layout_marginTop="90dp"
+        android:layout_marginRight="40dp"
+        android:layout_marginBottom="90dp"
         android:orientation="vertical"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.492"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.269">
+        >
 
+
+        <Space
+            android:layout_width="match_parent"
+            android:layout_height="15dp" />
 
         <com.google.android.material.textfield.TextInputLayout
             android:id="@+id/emailField"
             style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_marginTop="50dp"
+            android:layout_height="70dp"
+
             android:hint="Email"
             android:textColor="@color/white"
-            app:boxBackgroundColor="#76CCE1"
+            app:boxBackgroundColor="#A4D3F8"
             app:errorEnabled="true"
             app:startIconDrawable="@drawable/ic_baseline_alternate_email_24">
 
@@ -73,6 +48,15 @@
 
         </com.google.android.material.textfield.TextInputLayout>
 
+        <TextView
+            android:id="@+id/email"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="5dp"
+            android:text="Email"
+            android:textColor="@color/white"
+            android:textSize="16dp" />
+
         <EditText
             android:id="@+id/login_txt3"
             android:layout_width="match_parent"
@@ -82,28 +66,32 @@
             android:ems="30"
             android:inputType="textPassword"
             android:minHeight="48dp"
-            android:paddingStart="16dp"
+            android:paddingStart="26dp"
             android:textColor="@color/white"
             tools:ignore="SpeakableTextPresentCheck" />
 
+        <Space
+            android:layout_width="match_parent"
+            android:layout_height="15dp" />
+
         <TextView
-            android:id="@+id/textView2"
+            android:id="@+id/password"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginTop="5dp"
             android:text="Pasword"
-            android:textColor="@color/black"
+            android:textColor="@color/white"
             android:textSize="16dp" />
 
 
         <Button
             android:id="@+id/etregistro"
             style="@style/Widget.Material3.Button.ElevatedButton"
-            android:layout_width="160dp"
-            android:layout_height="wrap_content"
+            android:layout_width="235dp"
+            android:layout_height="60dp"
             android:layout_gravity="center_horizontal"
             android:layout_marginTop="15dp"
-            android:backgroundTint="#3E1860"
+            android:backgroundTint="#3F51B5"
             android:text="Registrarme"
 
             android:textColor="@color/white"
@@ -114,18 +102,27 @@
         <Button
             android:id="@+id/etiniciar"
             style="@style/Widget.Material3.Button.ElevatedButton"
-            android:layout_width="wrap_content"
-            android:layout_height="48dp"
+            android:layout_width="235dp"
+            android:layout_height="64dp"
             android:layout_gravity="center_horizontal"
             android:layout_marginTop="5dp"
-            android:layout_marginBottom="191dp"
-            android:backgroundTint="#3E1860"
+            android:layout_marginBottom="1dp"
+            android:backgroundTint="#3F51B5"
             android:text="Iniciar Sesión"
             android:textColor="@color/white"
             android:textSize="18sp" />
 
+        <ImageButton
+            android:id="@+id/GoogleButton"
+            style="@style/Widget.Material3.Button.ElevatedButton"
+            android:layout_width="122dp"
+            android:layout_height="86dp"
+            android:layout_gravity="center_horizontal"
+            android:contentDescription="@string/imagenboton"
+            app:srcCompat="@mipmap/google" />
+
 
     </LinearLayout>
 
-</androidx.constraintlayout.widget.ConstraintLayout>
+</LinearLayout>
 

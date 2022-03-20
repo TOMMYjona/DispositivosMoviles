@@ -28,6 +28,7 @@
     <string name="menu_slideshow">Slideshow</string>
     <string name="content_description_media">media</string>
     <string name="Sign_out">Sing out</string>
+    <string name="button_bar">button_bar</string>
 
 
 </resources>
