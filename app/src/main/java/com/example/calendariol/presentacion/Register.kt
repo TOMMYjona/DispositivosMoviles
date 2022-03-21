@@ -64,6 +64,7 @@ class Register : Fragment() {
                 while (!uriTask.isSuccessful);
                 dowload=uriTask.getResult()
                 val img=dowload.toString()
+
                 database=FirebaseDatabase.getInstance().getReference("Users")
                 val User=Users(firtname,lastname,age,img)
                 database.child(firtname).setValue(User).addOnSuccessListener {

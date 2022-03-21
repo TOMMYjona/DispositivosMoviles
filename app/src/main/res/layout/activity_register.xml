@@ -58,7 +58,7 @@
             android:textColor="@color/white"
             app:boxBackgroundColor="#94A1E4"
             app:errorEnabled="true"
-            app:startIconDrawable="@drawable/ic_baseline_alternate_email_24">
+            app:startIconDrawable="@android:drawable/ic_menu_edit">
 
             <EditText
                 android:id="@+id/nombre"
@@ -80,7 +80,7 @@
             android:textColor="@color/white"
             app:boxBackgroundColor="#94A1E4"
             app:errorEnabled="true"
-            app:startIconDrawable="@drawable/ic_baseline_alternate_email_24">
+            app:startIconDrawable="@android:drawable/ic_menu_edit">
 
             <EditText
                 android:id="@+id/apellido"
@@ -102,7 +102,7 @@
             android:textColor="@color/white"
             app:boxBackgroundColor="#94A1E4"
             app:errorEnabled="true"
-            app:startIconDrawable="@drawable/ic_baseline_alternate_email_24">
+            app:startIconDrawable="@android:drawable/ic_menu_edit">
 
             <EditText
                 android:id="@+id/edad"

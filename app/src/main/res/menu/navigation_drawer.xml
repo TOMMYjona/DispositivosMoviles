@@ -4,12 +4,12 @@
 
             <item
                 android:id="@+id/Noticias"
-                android:icon="@drawable/ic_baseline_home_24"
+                android:icon="@android:drawable/ic_menu_search"
                 android:title="@string/Noticias"
                 android:checkable="true"/>
             <item
                 android:id="@+id/Favoritos"
-                android:icon="@drawable/ic_baseline_group_24"
+                android:icon="@drawable/ic_favorite_24"
                 android:title="@string/Favoritos"
                 android:checkable="true"/>
 
@@ -18,22 +18,22 @@
         <menu>
             <item
                 android:id="@+id/Creación_Usuarios"
-                android:icon="@drawable/ic_baseline_group_24"
+                android:icon="@android:drawable/ic_menu_save"
                 android:title="@string/Creación_Usuarios"
                 android:checkable="true"/>
             <item
                 android:id="@+id/Pets"
-                android:icon="@drawable/ic_baseline_home_24"
+                android:icon="@android:drawable/ic_menu_view"
                 android:title="@string/Pets"
                 android:checkable="true"/>
             <item
                 android:id="@+id/Recordatorio"
-                android:icon="@drawable/ic_baseline_home_24"
+                android:icon="@android:drawable/ic_menu_my_calendar"
                 android:title="@string/Recordatorio"
                 android:checkable="true"/>
             <item
                 android:id="@+id/Sigout"
-                android:icon="@drawable/ic_baseline_home_24"
+                android:icon="@android:drawable/ic_menu_revert"
                 android:title="@string/Sign_out"
                 android:checkable="true"/>
 
