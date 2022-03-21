@@ -40,7 +40,20 @@ class ItemActivityPets : AppCompatActivity() {
         binding.googlepag.setOnClickListener(){
             googleurl(newsObtain!!)
         }
+        binding.googlemaps.setOnClickListener(){
+            googlemapsurl(newsObtain!!)
+        }
     }
+    fun googlemapsurl(news: NewsEntityLeus){
+        val uri=Uri.parse(news.cood)
+        val localInten=Intent(Intent.ACTION_VIEW,uri)
+        localInten.setPackage("com.google.android.apps.maps")
+        localInten.resolveActivity(packageManager)?.let{
+            startActivity(localInten)
+        }
+
+    }
+
     fun googleurl(news: NewsEntityLeus){
         val pag=Intent(Intent.ACTION_VIEW, Uri.parse(news.url))
         startActivity(pag)
